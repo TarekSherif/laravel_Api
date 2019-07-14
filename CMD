@@ -11,3 +11,11 @@ App>Providers>AppServiceProvider>boot
  Schema::defaultStringLength(191);
 php artisan make:Auth
 php artisan migrate 
+
+
+================================
+lecture 2
+================================
+App>Providers>RouteServiceProvider change apinamespace
+create Controller  in folder Api
+routes>api
