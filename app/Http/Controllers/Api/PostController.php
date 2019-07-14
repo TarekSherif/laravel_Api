@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\response;
+
 use App\Models\Post;
 
 class PostController extends Controller
 {
-
+    use ApiResponseTrait;
       /**
      * Show Hello API.
      * http://127.0.0.1:8000/api/hello
@@ -54,7 +54,7 @@ class PostController extends Controller
     public function index()
     {
         $posts=Post::get();
-        return response($posts,200);
+        return $this->jTableList($posts);
     }
         /**
      * Show  Post by id.
@@ -65,9 +65,9 @@ class PostController extends Controller
     {
         $post=Post::find($id);
         if($post){
-            return response($post,200);
+            return $this->jTableList($post);
         }
-        return response("Not Found this Post",404);
+        return $this->jTableList(null,"Not Found this Post",404);
     }
 
 
