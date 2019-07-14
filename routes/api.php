@@ -21,7 +21,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("hello","PostController@hello");
 Route::get("ArrayOfPosts","PostController@ArrayOfPosts");
 
-Route::get("posts","PostController@index");
-Route::get("post/{id}","PostController@show");
 
+Route::apiResource('posts', 'PostController');
+// Route::apiResources([
+//     'photos' => 'PhotoController',
+//     'posts' => 'PostController'
+// ]);
 // Route::resource('post', 'PostController')->except(['create', 'edit']);
+// Route::get("posts","PostController@index");
+// Route::get("post/{id}","PostController@show");
+

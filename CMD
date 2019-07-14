@@ -1,4 +1,4 @@
-install  postman 
+install  postman
 install  JSON Viewer Extensions
 
 ================================
@@ -10,7 +10,7 @@ Create DB
 App>Providers>AppServiceProvider>boot
  Schema::defaultStringLength(191);
 php artisan make:Auth
-php artisan migrate 
+php artisan migrate
 
 
 ================================
@@ -24,7 +24,7 @@ routes>api
 lecture 3
 ================================
 php artisan make:model  -m  Models/Post
-php artisan migrate 
+php artisan migrate
 
 ================================
 lecture 4
@@ -34,3 +34,14 @@ php artisan make:seed PostsSeader
 call Seader
 php artisan db:seed
 
+
+================================
+lecture 5
+================================
+php artisan make:controller API/PostsController --api
+Route::apiResource('post', 'PostController');
+Route::apiResources([
+    'photos' => 'PhotoController',
+    'posts' => 'PostController'
+]);
+Route::resource('post', 'PostController')->except(['create', 'edit']);
