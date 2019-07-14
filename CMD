@@ -19,3 +19,9 @@ lecture 2
 App>Providers>RouteServiceProvider change apinamespace
 create Controller  in folder Api
 routes>api
+
+================================
+lecture 3
+================================
+php artisan make:model  -m  Models/Post
+php artisan migrate 
