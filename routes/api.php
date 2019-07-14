@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get("hello","PostController@hello");
+Route::get("ArrayOfPosts","PostController@ArrayOfPosts");
 Route::get("posts","PostController@index");

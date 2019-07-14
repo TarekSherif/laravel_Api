@@ -25,3 +25,12 @@ lecture 3
 ================================
 php artisan make:model  -m  Models/Post
 php artisan migrate 
+
+================================
+lecture 4
+================================
+create Post factory
+php artisan make:seed PostsSeader
+call Seader
+php artisan db:seed
+

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\response;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -20,11 +21,11 @@ class PostController extends Controller
     }
 
     /**
-     * Show all posts.
-     * http://127.0.0.1:8000/api/hello
+     * Show all ArrayOfPosts.
+     * http://127.0.0.1:8000/api/ArrayOfPosts
      * @return json
      */
-    public function index()
+    public function ArrayOfPosts()
     {
         $posts=[
             [
@@ -44,4 +45,16 @@ class PostController extends Controller
         ];
         return response($posts,200);
     }
+
+    /**
+     * Show all Posts.
+     * http://127.0.0.1:8000/api/Posts
+     * @return json
+     */
+    public function index()
+    {
+        $posts=Post::get();
+        return response($posts,200);
+    }
+
 }
