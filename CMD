@@ -1,0 +1,13 @@
+install  postman 
+install  JSON Viewer Extensions
+
+================================
+lecture 1
+================================
+laravel new laravel_Api
+Create DB
+.env DB Setting
+App>Providers>AppServiceProvider>boot
+ Schema::defaultStringLength(191);
+php artisan make:Auth
+php artisan migrate 
